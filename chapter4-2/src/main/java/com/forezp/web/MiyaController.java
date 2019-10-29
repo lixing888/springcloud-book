@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by fangzhipeng on 2017/4/18.
+ * @author lixing
  */
 @RestController
 public class MiyaController {

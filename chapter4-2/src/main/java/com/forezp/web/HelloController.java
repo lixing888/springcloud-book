@@ -4,8 +4,8 @@ package com.forezp.web;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 
@@ -21,15 +21,12 @@ public class HelloController {
     @Bean
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
-
-            System.out.println("Let's inspect the beans provided by Spring Boot:");
-
+            System.out.println("来看看 SpringBoot 默认为我们提供的 Bean:");
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
             for (String beanName : beanNames) {
                 System.out.println(beanName);
             }
-
         };
     }
 
