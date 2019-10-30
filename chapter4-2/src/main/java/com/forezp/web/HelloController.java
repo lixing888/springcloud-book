@@ -24,9 +24,10 @@ public class HelloController {
             System.out.println("来看看 SpringBoot 默认为我们提供的 Bean:");
             String[] beanNames = ctx.getBeanDefinitionNames();
             Arrays.sort(beanNames);
-            for (String beanName : beanNames) {
-                System.out.println(beanName);
-            }
+            Arrays.stream(beanNames).forEach(System.out::println);
+//            for (String beanName : beanNames) {
+//                System.out.println(beanName);
+//            }
         };
     }
 

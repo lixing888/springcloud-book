@@ -5,6 +5,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -16,12 +18,13 @@ public class RedisDao {
     @Autowired
     private StringRedisTemplate template;
 
-    public  void setKey(String key,String value){
+    public void setKey(String key, String value) {
         ValueOperations<String, String> ops = template.opsForValue();
-        ops.set(key,value,1, TimeUnit.MINUTES);//1分钟过期
+        //1分钟过期
+        ops.set(key, value, 1, TimeUnit.MINUTES);
     }
 
-    public String getValue(String key){
+    public String getValue(String key) {
         ValueOperations<String, String> ops = this.template.opsForValue();
         return ops.get(key);
     }

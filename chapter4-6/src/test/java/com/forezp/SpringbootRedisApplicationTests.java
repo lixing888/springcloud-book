@@ -22,8 +22,8 @@ public class SpringbootRedisApplicationTests {
 	RedisDao redisDao;
 	@Test
 	public void testRedis(){
-		redisDao.setKey("name","forezp");
-		redisDao.setKey("age","11");
+		redisDao.setKey("name","lixing");
+		redisDao.setKey("age","28");
 		logger.info(redisDao.getValue("name"));
 		logger.info(redisDao.getValue("age"));
 	}
